@@ -33,6 +33,9 @@ namespace DatingApp.API
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             //dodajemy cors
             services.AddCors();
+            //rejestracja, wiele instancji jedna na http request, przygotowanei do injection w kontrolerze
+            services.AddScoped<IAuthRepository, AuthRepository>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
